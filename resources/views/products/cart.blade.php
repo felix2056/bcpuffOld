@@ -56,6 +56,11 @@
 
             <tr>
                 <td>
+                    <a href="{{ route('account.checkout') }}" class="btn btn-success text-center">
+                        <i class="fa fa-angle-left"></i> Checkout</a>
+                </td>
+
+                <td>
                     <a href="{{ route('products.index') }}" class="btn btn-warning text-center">
                         <i class="fa fa-angle-left"></i> Continue Shopping</a>
                 </td>
