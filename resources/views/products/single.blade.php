@@ -6,6 +6,7 @@
 
 @section('content')
     <!----------singel prodcut details----------->
+    
     <div class="small-container single-product">
         <div class="main">
             <div class="col-2">
