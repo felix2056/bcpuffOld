@@ -34,7 +34,7 @@
                     @if (Auth::user()->isAdmin())
                         <li><a href="{{ route('admin.index') }}">ADMIN</a></li>
                     @else
-                        <li><a href="{{ route('dashboard') }}">ACCOUNT</a></li>
+                        <li><a href="{{ route('account.index') }}">ACCOUNT</a></li>
                     @endif
                     @endauth
 
