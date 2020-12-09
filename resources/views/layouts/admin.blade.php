@@ -739,8 +739,8 @@
                 <a href="index.html" class="logo">
                     <!-- logo-->
                     <div class="logo-lg">
-                        <span class="light-logo"><img src="../images/logo-dark-text.png" alt="logo"></span>
-                        <span class="dark-logo"><img src="../images/logo-light-text.png" alt="logo"></span>
+                        {{-- <span class="light-logo"><img src="/img/compas.png" alt="logo"></span>
+                        <span class="dark-logo"><img src="/img/compas.png" alt="logo"></span> --}}
                     </div>
                 </a>
             </div>
@@ -903,18 +903,23 @@
                                     <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i>
                                         Settings</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
+
+                                    <!-- LOGOUT FORM -->
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <!-- /LOGOUT FORM -->
+                                    <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
                                 </li>
                             </ul>
                         </li>
 
                         <!-- Control Sidebar Toggle Button -->
-                        <li>
+                        {{-- <li>
                             <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
                                 <i class="ti-settings"></i>
                             </a>
-                        </li>
-
+                        </li> --}}
                     </ul>
                 </div>
             </nav>
@@ -986,6 +991,14 @@
                         <a href="{{ route('account.checkout') }}">
                             <i class="ti-unlock"></i>
                             <span>Checkout</span>
+                        </a>
+                    </li>
+
+                    <li class="header">Pages</li>
+                    <li>
+                        <a href="{{ route('account.faqs') }}">
+                            <i class="ti-files"></i>
+                            <span>Faqs</span>
                         </a>
                     </li>
                 </ul>

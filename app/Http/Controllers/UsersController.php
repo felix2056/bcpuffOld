@@ -28,6 +28,11 @@ class UsersController extends Controller
         return view('account.orders', compact('orders'));
     }
 
+    public function faqs()
+    {
+        return view('account.faqs');
+    }
+
     public function checkout()
     {
         $cart = session()->get('cart');

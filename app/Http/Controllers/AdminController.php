@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -17,8 +18,10 @@ class AdminController extends Controller
     {
         $data = array();
 
-        $data['products_count'] = Product::count();
-        $data['users_count'] = User::count();
+        $data['total_products'] = Product::count();
+        $data['total_users'] = User::count();
+        $data['total_admins'] = User::where('type', User::ADMIN_TYPE)->count();
+        $data['total_orders'] = Order::count();
 
         return view('admin.index', compact('data'));
     }

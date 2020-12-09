@@ -67,6 +67,9 @@ Route::group(['middleware' => ['auth']], function () {
 
         //Checkout
         Route::get('/checkout', 'UsersController@checkout')->name('account.checkout');
+
+        //Faqs
+        Route::get('/faqs', 'UsersController@faqs')->name('account.faqs');
     });
 
     Route::group(['prefix' => 'payment'], function () {
